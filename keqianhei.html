@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可谦黑 | #4f372f - 一抹温润的诗意</title>
+    <style>
+        /* 引入优雅的在线字体 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+        :root {
+            --main-color: #4f372f; /* 可谦黑 */
+            --bg-color: #fdfaf6;   /* 温暖的背景色 */
+            --accent-color: #c0a062; /* 淡雅的金色点缀 */
+            --text-color: #333;
+        }
+
+        /* 基础与重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Serif SC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 布局与容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 标题与文本 */
+        h1, h2, h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 700;
+            color: var(--main-color);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* --- 1. 首屏 --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 1.5s;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--bg-color);
+            margin: 0;
+            letter-spacing: 5px;
+        }
+
+        .hero .hex-code {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .hero .hex-code:hover {
+            background-color: var(--accent-color);
+            color: var(--main-color);
+        }
+        
+        .hero .subtitle {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: rgba(253, 250, 246, 0.8);
+        }
+
+        /* --- 2. 色彩之诗 --- */
+        #story {
+            text-align: center;
+        }
+
+        #story p {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2rem;
+        }
+
+        /* --- 3. 和谐共鸣 --- */
+        .palette-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 圆形色块 */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 4px solid var(--bg-color);
+        }
+        
+        .color-box:hover {
+            transform: scale(1.05);
+        }
+
+        .color-info {
+            margin-top: 1rem;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+        
+        .color-info span {
+            display: block;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* --- 4. 灵感之境 --- */
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .inspiration-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            height: 400px;
+        }
+
+        .inspiration-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .inspiration-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .inspiration-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(79, 55, 47, 0.8), transparent);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        .inspiration-item .overlay h3 {
+             color: white;
+             margin-bottom: 0.5rem;
+        }
+
+        .inspiration-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        /* --- 5. 页脚 --- */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--main-color);
+            color: rgba(253, 250, 246, 0.7);
+        }
+        
+        footer p {
+            color: rgba(253, 250, 246, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .hero .hex-code { font-size: 1.5rem; }
+            h2 { font-size: 2rem; }
+            .container { padding: 4rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 首屏 -->
+    <header class="hero">
+        <h1>可谦黑</h1>
+        <div class="hex-code" id="copyButton" onclick="copyHex()">#4f372f</div>
+        <p class="subtitle">它不是纯粹的黑，而是融于大地的沉稳，藏于古木的温润。</p>
+    </header>
+
+    <main>
+        <!-- 2. 色彩之诗 -->
+        <section id="story" class="container">
+            <h2>色彩之诗</h2>
+            <p>
+                可谦黑 (Humble Black)，是一种有温度的颜色。它让人联想到手工烘焙的咖啡豆，散发着醇厚香气；或是雨后湿润的沃土，孕育着无限生机。它低调、不张扬，却拥有包容一切的力量。在它的映衬下，万物都显得更加柔和而富有质感。
+            </p>
+        </section>
+
+        <!-- 3. 和谐共鸣 -->
+        <section id="palette" class="container">
+            <h2>和谐共鸣</h2>
+            <div class="palette-container">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #4f372f;"></div>
+                    <div class="color-info">可谦黑 <span>#4f372f</span></div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #fdfaf6;"></div>
+                    <div class="color-info">杏仁白 <span>#fdfaf6</span></div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #c0a062;"></div>
+                    <div class="color-info">流沙金 <span>#c0a062</span></div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #7d7a74;"></div>
+                    <div class="color-info">烟波灰 <span>#7d7a74</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 灵感之境 -->
+        <section id="inspiration" class="container">
+            <h2>灵感之境</h2>
+            <div class="inspiration-grid">
+                <div class="inspiration-item">
+                    <img src="https://images.unsplash.com/photo-1595952339540-10f63a0175b1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Interior Design">
+                    <div class="overlay">
+                        <h3>静谧家居</h3>
+                        <p>深色的木质家具与柔和的布艺结合，营造出安宁、沉静的居住空间。</p>
+                    </div>
+                </div>
+                <div class="inspiration-item">
+                    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Fashion">
+                    <div class="overlay">
+                        <h3>质感时尚</h3>
+                        <p>无论是皮具还是羊绒大衣，这个颜色都能赋予其经典、永不过时的优雅气质。</p>
+                    </div>
+                </div>
+                <div class="inspiration-item">
+                    <img src="https://images.unsplash.com/photo-1511920183353-3c9c9339ce7e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Product Design">
+                    <div class="overlay">
+                        <h3>匠心之作</h3>
+                        <p>在产品包装和品牌视觉中，它传递出一种值得信赖的、高品质的专业感。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 5. 页脚 -->
+    <footer>
+        <p>感受这抹温润之色，发现生活中的谦逊之美。</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2024 · 由 AI 精心构思与设计</p>
+    </footer>
+
+    <script>
+        // JavaScript 用于实现复制功能
+        function copyHex() {
+            const hexCode = '#4f372f';
+            navigator.clipboard.writeText(hexCode).then(() => {
+                const button = document.getElementById('copyButton');
+                const originalText = button.innerText;
+                button.innerText = '已复制!';
+                setTimeout(() => {
+                    button.innerText = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('复制失败: ', err);
+            });
+        }
+
+        // JavaScript 用于实现滚动淡入效果
+        const sections = document.querySelectorAll('.container');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
